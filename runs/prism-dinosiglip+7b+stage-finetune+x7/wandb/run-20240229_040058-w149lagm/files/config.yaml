@@ -1,0 +1,113 @@
+wandb_version: 1
+
+model:
+  desc: null
+  value:
+    type: prism-dinosiglip+7b
+    model_id: prism-dinosiglip+7b
+    arch_specifier: no-align+fused-gelu-mlp
+    vision_backbone_id: dinosiglip-vit-so-384px
+    llm_backbone_id: llama2-7b-pure
+    image_resize_strategy: resize-naive
+    llm_max_length: 2048
+    align_epochs: 1
+    align_max_steps: null
+    align_global_batch_size: 256
+    align_per_device_batch_size: 16
+    align_learning_rate: 0.001
+    align_weight_decay: 0.0
+    align_max_grad_norm: 1.0
+    align_lr_scheduler_type: linear-warmup+cosine-decay
+    align_warmup_ratio: 0.03
+    align_train_strategy: fsdp-shard-grad-op
+    finetune_epochs: 2
+    finetune_max_steps: null
+    finetune_global_batch_size: 128
+    finetune_per_device_batch_size: 16
+    finetune_learning_rate: 2.0e-05
+    finetune_weight_decay: 0.1
+    finetune_max_grad_norm: 1.0
+    finetune_lr_scheduler_type: linear-warmup+cosine-decay
+    finetune_warmup_ratio: 0.03
+    finetune_train_strategy: fsdp-full-shard
+    enable_gradient_checkpointing: true
+    enable_mixed_precision_training: true
+    reduce_in_full_precision: false
+dataset:
+  desc: null
+  value:
+    type: llava-v15
+    dataset_id: llava-v15
+    align_stage_components:
+    - download/llava-laion-cc-sbu-558k/chat.json
+    - download/llava-laion-cc-sbu-558k
+    finetune_stage_components:
+    - download/llava-v1.5-instruct/llava_v1_5_mix665k.json
+    - download/llava-v1.5-instruct
+    dataset_root_dir: data
+stage:
+  desc: null
+  value: finetune
+pretrained_checkpoint:
+  desc: null
+  value: null
+run_id:
+  desc: null
+  value: prism-dinosiglip+7b+stage-finetune+x7
+run_root_dir:
+  desc: null
+  value: runs
+seed:
+  desc: null
+  value: 7
+hf_token:
+  desc: null
+  value: .hf_token
+trackers:
+  desc: null
+  value:
+  - jsonl
+  - wandb
+wandb_project:
+  desc: null
+  value: prism
+wandb_entity:
+  desc: null
+  value: null
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.12
+    cli_version: 0.16.3
+    framework: huggingface
+    huggingface_version: 4.34.1
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1709179258.15664
+    t:
+      1:
+      - 1
+      - 11
+      - 41
+      - 49
+      - 55
+      - 63
+      - 71
+      2:
+      - 1
+      - 11
+      - 41
+      - 49
+      - 55
+      - 63
+      - 71
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.10.12
+      5: 0.16.3
+      6: 4.34.1
+      8:
+      - 5
+      13: linux-x86_64

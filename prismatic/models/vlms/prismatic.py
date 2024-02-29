@@ -245,6 +245,7 @@ class PrismaticVLM(VLM):
             ],
         )
 
+    # [tag]: Learn the pattern to use hf model. 
     # Note =>> We're not explicitly subclassing `PreTrainedModel` because we don't need the bloat; however, `forward()`
     #          *must* match the signature of a `{Model}ForCausalLM` so that we can inherit from `GenerationMixin`
 

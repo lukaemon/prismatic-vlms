@@ -1,0 +1,1 @@
+{"Finetune/Step": 169, "Finetune/Loss": 1.1496405601501465, "Finetune/Loss (Raw)": 1.1069295406341553, "Finetune/Learning Rate": 1.0868167202572348e-05, "Finetune/Step Time": 25.527444945648313, "_timestamp": 1709186304.4579902, "_runtime": 4331.241331100464, "_step": 169, "_wandb": {"runtime": 4352}}
