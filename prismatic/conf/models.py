@@ -377,7 +377,7 @@ class Prism_13B_SigLIP_Controlled(Exp_13B_One_Stage):
 
 #   =>> Note :: Run with `--dataset.type "llava-lvis4v-lrv"`
 @dataclass
-class Prism_7B_SigLIP(Exp_7B_One_Stage):
+class Prism_7B_SigLIP(Exp_7B_One_Stage):  # [tag]
     model_id: str = "prism-siglip+7b"
     vision_backbone_id: str = "siglip-vit-so400m-384px"
     image_resize_strategy: str = "resize-naive"
@@ -416,13 +416,13 @@ class Prism_13B_DINOSigLIP_Controlled(Exp_13B_One_Stage):
 
 #   =>> Note :: Run with `--dataset.type "llava-lvis4v-lrv"`
 @dataclass
-class Prism_7B_DINOSigLIP(Exp_7B_One_Stage):
+class Prism_7B_DINOSigLIP(Exp_7B_One_Stage):  # [tag]: default model
     model_id: str = "prism-dinosiglip+7b"
     vision_backbone_id: str = "dinosiglip-vit-so-384px"
     image_resize_strategy: str = "resize-naive"
     llm_backbone_id: str = "llama2-7b-pure"
     arch_specifier: str = "no-align+fused-gelu-mlp"
-    finetune_epochs: int = 2  # [tag]
+    finetune_epochs: int = 2  
 
 
 #   =>> Note :: Run with `--dataset.type "llava-lvis4v-lrv"`
